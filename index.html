@@ -4,16 +4,68 @@
   <meta charset="UTF-8">
   <title>Form Input Live Affiliate</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
-    form { background: white; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    label { display: block; margin-top: 10px; font-weight: bold; }
-    input, select { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
-    button { margin-top: 15px; padding: 10px; width: 100%; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background: #0056b3; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1e90ff; /* biru */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
   </style>
 </head>
 <body>
-  <h2>Input Data Live Streaming GAIA OLSHOP</h2>
+  <h2>Form Input Data Live Streaming</h2>
   <form id="liveForm">
     <label>Tanggal</label>
     <input type="date" name="tanggal" required>
@@ -45,11 +97,11 @@
     <label>Jumlah Keranjang</label>
     <input type="number" name="keranjang" required>
 
-    <button type="submit">Simpan</button>
+    <button type="submit">Simpan Data</button>
   </form>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycby19T-sFXAsFl5p-fMaqC30pLhni8awodrslx47JTHJcvF9RtzC_7Shh8kdgsWtjoow0Q/exec"; // Ganti dengan URL Web App dari Apps Script
+    const scriptURL = "https://script.google.com/macros/s/AKfycby19T-sFXAsFl5p-fMaqC30pLhni8awodrslx47JTHJcvF9RtzC_7Shh8kdgsWtjoow0Q/exec";
 
     document.getElementById("liveForm").addEventListener("submit", e => {
       e.preventDefault();
@@ -63,12 +115,11 @@
       })
       .then(res => res.text())
       .then(txt => {
-        alert("Data berhasil disimpan!");
+        alert("✅ Data berhasil disimpan!");
         e.target.reset();
       })
-      .catch(err => alert("Gagal: " + err));
+      .catch(err => alert("❌ Gagal: " + err));
     });
   </script>
 </body>
 </html>
-

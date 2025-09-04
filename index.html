@@ -37,13 +37,19 @@
       font-weight: bold;
     }
 
-    input, select {
+    input, select, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 6px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
     }
 
     button {
@@ -84,6 +90,9 @@
 
     <label>Waktu Selesai</label>
     <input type="datetime-local" name="waktuSelesai" required>
+
+    <label>Produk Terjual</label>
+    <textarea name="produk" placeholder="Contoh: Lipstik A (3 pcs), Blender B (2 pcs)" required></textarea>
 
     <label>Omset (Rp)</label>
     <input type="number" name="omset" required>
